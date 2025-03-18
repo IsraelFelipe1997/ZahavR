@@ -1,0 +1,370 @@
+/* Reset de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Faz a rolagem ser suave */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Estilizando o menu */
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    justify-content: space-between; /* Distribui os elementos no header */
+    align-items: center; /* Alinha verticalmente */
+    /* background: rgba(255, 255, 255, 0.8); tranparencia no header*/
+    background: rgba(255, 255, 255);
+    padding: 10px 0; 
+    padding-left: 30px;
+    padding-right: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 80px; /* Ajuste o tamanho da logo */
+    width: auto; /* Mantém a proporção da imagem */
+    padding-left: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/* Cor do item "Início" */
+nav ul li:first-child a {
+    color: #DAA520; /* Amarelo */
+}
+
+/* Cor padrão dos outros itens */
+nav ul li:not(:first-child) a {
+    color: #333; /* Cinza */
+}
+
+/* Hover: troca o cinza para amarelo */
+nav ul li:not(:first-child) a:hover {
+    color: #DAA520;
+}
+
+/* Para telas grandes (Desktop e Tablets) */
+@media (min-width: 768px) {
+    #menu-btn, #close-btn {
+        display: none; /* Esconde os botões do menu mobile */
+    }
+
+    nav {
+        display: block; /* Garante que o menu apareça */
+        position: static; /* Remove qualquer posicionamento fixo */
+        width: auto; /* Mantém o menu dentro do cabeçalho */
+    }
+
+    nav ul {
+        display: flex; /* Menu horizontal */
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: transparent;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+}
+
+
+/* Estilizando a barra de rolagem no Chrome, Edge e Safari */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+    background: #b0b0b3; /* Amarelo da sua paleta */
+}
+
+/* Cor da barra em si */
+::-webkit-scrollbar-thumb {
+    background: #daa520; /* Amarelo mais escuro para contraste */
+    border-radius: 10px; /* Deixa arredondado */
+}
+
+/* Quando passa o mouse sobre a barra */
+::-webkit-scrollbar-thumb:hover {
+    background: #c99c10; /* Tom ainda mais escuro ao passar o mouse */
+}
+
+/* Estilizando as seções */
+section {
+    height: 100vh; /* Cada seção ocupa a tela inteira */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+#inicio {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(242, 211, 53, 0.8), rgba(75, 75, 77, 0.8)), 
+                url('images/capa/slide/01_obra.png') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.8s ease-in-out;
+}
+
+/* Estilizando a animação slide */
+#inicio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(10px); /* Aplica o blur antes da troca */
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, filter 0.8s ease-in-out;
+}
+
+#inicio.blurring::before {
+    opacity: 1; /* Aumenta a opacidade antes da troca */
+    filter: blur(20px); /* Blur mais forte antes de remover a imagem */
+}
+
+.slogan-video {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.video-parts{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;    
+}
+
+.botao-saiba-mais {
+    position: relative;
+    background-color: #BF8E34; /* Cor de fundo */
+    border: none; /* Remove a borda */
+    color: white; /* Cor do texto */
+    padding: 15px 32px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Exibe como bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s ease; /* Adiciona transição */
+    border-radius: 8px; 
+    margin-top: 30px;
+}
+
+.botao-saiba-mais:hover {
+    background-color: #D9AF32; /* Cor de fundo ao passar o mouse */
+}
+
+.texture_geometry1{
+    position: absolute;
+    bottom: 50px; /* Ajuste conforme necessário */
+    left: 30px; /* Ajuste conforme necessário */
+    transform: rotate(180deg);
+    opacity: 0.5;
+}
+
+.texture_geometry2{
+    position: absolute;
+    top: 150px; /* Ajuste conforme necessário */
+    right: 30px; /* Ajuste conforme necessário */
+    opacity: 0.5;
+}
+
+.indicadores {
+    position: absolute;
+    bottom: 20px; /* Distância do rodapé da section */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px; /* Espaço entre as bolinhas */
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.indicador.ativo {
+    background-color: #f2d335; /* Amarelo da sua paleta */
+}
+
+#whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Ajuste o tamanho conforme necessário */
+    height: 60px;
+    z-index: 1000; /* Garante que fique sempre visível */
+}
+
+#whatsapp-btn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Deixa o ícone arredondado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Efeito de sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#whatsapp-btn img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Definindo cores diferentes para cada seção */
+/* #inicio { background: #BF8E34; }*/
+#produtos { background: #8B8B8C; }
+#contato { background: #4B4B4D; }
+
+/* ############# RESPONSIVIDADE ############## */
+
+/* Para telas grandes (Desktop) */
+@media (min-width: 1030px) {
+    .slogan-video {
+        width: 50vw; /* 60% da largura da tela */
+    }
+}
+
+/* Para Tablets */
+@media (max-width: 1029px) and (min-width: 768px) {
+    .slogan-video {
+        width: 80vw; /* 80% da largura da tela */
+    }
+}
+
+/* Para Smartphones */
+@media (max-width: 767px) {
+    .slogan-video {
+        width: 90vw; /* Quase a largura total da tela */
+    }
+}
+
+/* Para Smartphones */
+@media (max-width: 767px) {
+    nav {
+        display: none; /* Esconde o menu padrão */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 35vh;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        padding-top: 30px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    #menu {
+        display: none; /* Inicialmente escondido */
+    }
+
+    #menu.active {
+        display: block; /* Mostra o menu ao ser ativado pelo JS */
+    }
+
+    /* Estilizando o ícone do menu mobile */
+    #menu-btn {
+        font-size: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #DAA520; /* Cor dourada */
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    #menu-btn:hover {
+        transform: scale(1.2);
+    }
+
+    /* Estilizando o botão de fechar (X) */
+    #close-btn {
+        font-size: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #DAA520;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    #close-btn:hover {
+        transform: rotate(90deg) scale(1.2);
+    }
+}

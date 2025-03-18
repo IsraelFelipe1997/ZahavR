@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahav representações</title>
+    <link rel="stylesheet" href="styles/style_principal.css">
+    <link rel="stylesheet" href="styles/sobre_nos.css">
+    <link rel="icon" type="image/png" href="images/icons/favicon_ico.png">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="images/logo/zahav_logo_amarela_2.png" alt="Logo da Zahav">
+        </div>
+    
+        <!-- Botão do Menu Mobile -->
+        <button id="menu-btn" class="menu-mobile">☰</button>
+    
+        <!-- Menu Lateral -->
+        <nav id="menu">
+            <button id="close-btn">×</button> <!-- Botão de Fechar dentro do menu -->
+            <ul>
+                <li><a href="#inicio" id="menu-inicio">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- SEÇÕES DA PÁGINA -->
+    <section id="inicio">
+       <!--  <h1>Capa do site</h1> -->
+        <!--<img src="images/capa/slogan/slogan8.png" alt="Construindo o futuro com inovação e qualidade" class="frase-capa"> -->
+
+        <!--<video class="slogan-video" autoplay muted playsinline onended="manterUltimoFrame()">
+            <source src="images/capa/slogan/slogan_5.webm" type="video/webm" 
+                alt="Reduza seus custos com os melhores produtos para sua obra">
+            Seu navegador não suporta vídeos com transparência.
+        </video>-->
+
+        <video class="slogan-video" autoplay muted playsinline loop>
+            <source src="images/capa/slogan/slogan_6.webm" type="video/webm" 
+                alt="Reduza seus custos com os melhores produtos para sua obra">
+            Seu navegador não suporta vídeos com transparência.
+        </video>
+
+        <div><a href="#" class="botao-saiba-mais" id="botao_sobre">SAIBA MAIS</a></div>
+        <div class="indicadores"></div>
+        <div class="texture_geometry1"> <img src="images/texturas/pattern1.png"></div>
+        <div class="texture_geometry2"> <img src="images/texturas/pattern1.png"></div>
+    </section>
+
+    <section id="sobre">
+
+        <h1 class="sobre_nos_titulo">SOBRE NÓS</h1>
+        <h2 class="subtitulo">Uma empresa que conecta.</h2>
+            <div class="sobre_nos_texto_video">
+                <div class="video_sobre">
+                    <img class="video_sobre" src="/outros/youtube.png" alt="video sobre Zahav Representações">
+                </div>
+                        <!--<div class="video_sobre">
+                            <img src="images/outros/youtube.png" alt="video sobre Zahav Representações">
+                        </div> 
+                        <p class="scroll_animado_up sobre_nos_p">
+                            A Zahav Representações é um escritório especializado em vendas para a construção civil, 
+                            atuando como elo estratégico entre as melhores fábricas e grandes construtoras. 
+                            Com um portfólio sólido e uma ampla rede de parceiros, conectamos empresas às indústrias 
+                            certas, garantindo soluções eficientes, qualidade e as melhores condições do mercado. 
+                            Nossa expertise nos permite otimizar negociações e fortalecer relações comerciais, 
+                            impulsionando o sucesso de nossos clientes.
+                            Frase1: Aumente suas vendas com as melhores construtoras.
+                            Frase2: Conectamos sua indústria às maiores oportunidades.
+                        </p> -->
+                <div>
+    </section>
+
+    <section id="produtos">
+        <h1>Nossos Produtos</h1>
+    </section>
+
+    <section id="contato">
+        <h1>Fale Conosco</h1>
+    </section>
+
+    <a href="https://wa.me/551142717950" target="_blank" id="whatsapp-btn">
+        <img src="images/icons/WhatsApp.webp" alt="WhatsApp">
+    </a>
+
+    <footer class="footer">
+        <p>© 2025 Zahav representações.  Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="scripts/one_page_scroll_script.js"></script>
+    <script src="scripts/slide_capa.js"></script>
+    <script src="scripts/video_hero.js"></script>
+    <script src="scripts/menu_reponsivo.js"></script>
+    <script src="scripts/parallax_scroll.js"></script>
+    <script src="scripts/texto_flutuante_suave.js"></script>
+</body>
+</html>
+

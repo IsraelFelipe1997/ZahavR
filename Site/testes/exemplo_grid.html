@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout sem Bootstrap - Matriz 2x2</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .col-md-6 {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            line-height: 1.6;
+        }
+
+        .card1 {
+            background-color: #f0f0f0;
+        }
+
+        .card2 {
+            background-color: #e0e0e0;
+        }
+
+        .card3 {
+            background-color: #d0d0d0;
+        }
+
+        .card4 {
+            background-color: #c0c0c0;
+        }
+
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card1">
+                    <div class="card-body">
+                        <h2 class="card-title">Card 1</h2>
+                        <p class="card-text">Conteúdo do Card 1.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card2">
+                    <div class="card-body">
+                        <h2 class="card-title">Card 2</h2>
+                        <p class="card-text">Conteúdo do Card 2.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card3">
+                    <div class="card-body">
+                        <h2 class="card-title">Card 3</h2>
+                        <p class="card-text">Conteúdo do Card 3.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card4">
+                    <div class="card-body">
+                        <h2 class="card-title">Card 4</h2>
+                        <p class="card-text">Conteúdo do Card 4.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

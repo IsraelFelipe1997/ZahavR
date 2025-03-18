@@ -1,0 +1,28 @@
+body {
+    display: grid;
+    grid-template-rows: 100px 1fr 50px; /* Define as alturas das linhas */
+    grid-template-columns: 1fr; /* Define uma única coluna */
+    height: 100vh; /* Garante que o grid ocupe toda a altura da tela */
+    margin: 0; /* Remove margens padrão do body */
+}
+
+.header {
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    background-color: #d0d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,126 @@
+
+#sobre {
+    display: flex;
+    flex-direction:column;
+    align-items:left;
+    /*justify-content: start; coloca o conteudo no topo*/
+    padding: 20px;
+    /*background-color: white;*/
+    background: rgba(217, 175, 50);
+    background-image: url("../images/sobre_nos/estrutura2.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    background-blend-mode: multiply;
+    opacity: 1;
+
+}
+
+/* adicionar fonte da pasta */
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url('fonts/Poppins-Black.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url('fonts/Poppins-Black.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*  ###### estilo para estruturar a pagina em containers de linhas e colunas ####### */
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.col-md-6 {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+/*  ###### ################################################################ ####### */
+
+.scroll_animado_up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Quando a classe 'ativo' for adicionada pelo JS, o efeito acontece */
+.scroll_animado_up.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sobre_nos_titulo {
+    position: relative;
+    font-size: 130px; /* Ajuste conforme necessário */
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-align: left; /* Alinhamento padrão para desktop/tablet */
+    line-height: 0.8; /* Altura da linha */
+
+}
+
+
+.sobre_nos_texto_video{
+    
+}
+
+.video_sobre{
+    position: relative;
+    padding-top: 10px;
+    margin-top: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.subtitulo{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0; /* Removido padding para alinhar ao canto */
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sobre_nos_p {
+    top: 20px;           /* Define a distância do topo */
+    left: 20px;          /* Define a distância da esquerda */
+    margin: 0;           /* Remove margens padrão */
+    padding: 10px;       /* Espaço interno opcional */
+    font-size: 20px; /* Aumenta o tamanho do texto */
+    font-weight: bold; /* Deixa mais destacado */
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}
+
+/* responsividade para tablets ou celulares */
+
+/* Media query para telas de celular */
+@media (max-width: 768px) {
+    .sobre_nos_titulo {
+        position: relative;
+        text-align: center top; /* Centraliza o texto */
+        font-size: 8vw; /* Ajuste conforme necessário */
+        width: 80%; /* Define a largura do texto */
+        margin: 0 auto; /* Centraliza o texto horizontalmente */
+    }
+
+    .video_sobre{
+        width: 80%;
+    }
+}

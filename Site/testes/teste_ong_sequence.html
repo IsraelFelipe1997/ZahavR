@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de PNGs</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="image" src="sequencia/animaçao_laptop0001.png" alt="Sequência PNG">
+
+    <script>
+        let index = 0001;
+        const totalImages = 10; // Número total de imagens PNG na sequência
+        const imageElement = document.getElementById("image");
+
+        function changeImage() {
+            index = (index % totalImages) + 1;
+            imageElement.src = `animaçao_laptop${index}.png`; // Caminho da imagem, altere conforme necessário
+        }
+
+        setInterval(changeImage, 100); // Altere o tempo para controlar a velocidade (em milissegundos)
+    </script>
+
+</body>
+</html>

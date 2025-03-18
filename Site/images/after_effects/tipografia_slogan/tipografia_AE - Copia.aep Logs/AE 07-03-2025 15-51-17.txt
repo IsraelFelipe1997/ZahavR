@@ -1,0 +1,17 @@
+Adobe After Effects v25.1 Windows 64 render log for project “tipografia_AE - Copia.aep”
+
+Rendering started on 07/03/2025 at 15:51:17
+
+  07/03/2025 15:51:17: Starting composition “tipografia_site”.
+
+  Output To: C:\Users\IsraelDesktop\Desktop\tipografia_site_ae.mp4    07/03/2025 15:51:23: Finished composition “tipografia_site”.
+
+
+  07/03/2025 15:51:23: Starting composition “tipografia_site”.
+
+  Output To: C:\Users\IsraelDesktop\Documents\Tiago\Zahav representações\Site\images\capa\slogan\tipografia_site_1.mp4    07/03/2025 15:51:24: Finished composition “tipografia_site”.
+
+
+  Total Time Elapsed: 7 Seconds
+Log closed on 07/03/2025 at 15:51:24
+
