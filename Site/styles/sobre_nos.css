@@ -1,6 +1,8 @@
 
 #sobre {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction:column;
     align-items:left;
     /*justify-content: start; coloca o conteudo no topo*/
@@ -13,7 +15,6 @@
     background-size: contain;
     background-blend-mode: multiply;
     opacity: 1;
-
 }
 
 /* adicionar fonte da pasta */
@@ -71,19 +72,13 @@
     font-family: 'Poppins', sans-serif;
     text-align: left; /* Alinhamento padrão para desktop/tablet */
     line-height: 0.8; /* Altura da linha */
-
-}
-
-
-.sobre_nos_texto_video{
-    
 }
 
 .video_sobre{
     position: relative;
     padding-top: 10px;
     margin-top: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .subtitulo{
@@ -122,5 +117,66 @@
 
     .video_sobre{
         width: 80%;
+    }
+}
+
+
+.container{
+    position: relative;
+}
+
+
+
+
+.section-title {
+    font-size: 32px;
+    color: #b8860b; /* Dourado */
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 22px;
+    color: #b8860b;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
     }
 }

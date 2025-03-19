@@ -1,0 +1,86 @@
+
+/* SEÇÃO DE CONTATO */
+#contato {
+    display: flex;
+    height: 100vh;
+}
+
+/* LADO ESQUERDO (BRANCO) */
+.contato-esquerda {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.contato-esquerda h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+/* LADO DIREITO (AMARELO) */
+.contato-direita {
+    flex: 1;
+    background-color: #FFC107;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* FORMULÁRIO */
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container input, .form-container select, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #555;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    #contato {
+        flex-direction: column;
+    }
+
+    .contato-esquerda, .contato-direita {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+    }
+}

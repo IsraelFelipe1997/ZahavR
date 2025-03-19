@@ -6,7 +6,9 @@
     <title>Zahav representações</title>
     <link rel="stylesheet" href="styles/style_principal.css">
     <link rel="stylesheet" href="styles/sobre_nos.css">
+    <link rel="stylesheet" href="styles/servicos.css">
     <link rel="stylesheet" href="styles/contato.css">
+    
     <link rel="icon" type="image/png" href="images/icons/favicon_ico.png">
 </head>
 <body>
@@ -31,7 +33,6 @@
         </nav>
     </header>
     
-
     <!-- SEÇÕES DA PÁGINA -->
     <section id="inicio">
        <!--  <h1>Capa do site</h1> -->
@@ -50,21 +51,61 @@
         </video>
 
         <div><a href="#" class="botao-saiba-mais" id="botao_sobre">SAIBA MAIS</a></div>
+        <div><a href="https://wa.me/551142717950" class="botao-entre-contato" id="entre_contato">ENTRE EM CONTATO</a></div>
         <div class="indicadores"></div>
         <div class="texture_geometry1"> <img src="images/texturas/pattern1.png"></div>
         <div class="texture_geometry2"> <img src="images/texturas/pattern1.png"></div>
     </section>
 
     <section id="sobre">
+        <div class="container">
+            <h2 class="section-title">Missão, Visão e Valores</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1040/1040241.png" alt="Missão">
+                    <h3>Missão</h3>
+                    <p>Impulsionar as vendas do setor industrial com marketing integrado e representação comercial eficiente.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1001/1001409.png" alt="Visão">
+                    <h3>Visão</h3>
+                    <p>Ser referência em marketing e representação comercial, gerando crescimento sustentável.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Valores">
+                    <h3>Valores</h3>
+                    <p>Conexão estratégica, inovação, transparência, crescimento sustentável e excelência no atendimento.</p>
+                </div>
+            </div>
+        </div>
 
-        <h1 class="sobre_nos_titulo">SOBRE NÓS</h1>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const cards = document.querySelectorAll(".card");
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                        }
+                    });
+                }, { threshold: 0.3 });
+        
+                cards.forEach(card => {
+                    observer.observe(card);
+                });
+            });
+        </script>
+
+        <!-- <h1 class="sobre_nos_titulo">SOBRE NÓS</h1>
         <h2 class="subtitulo">Uma empresa que conecta.</h2>
-            <div class="sobre_nos_texto_video">
+        <img class="video_sobre" src="images/outros/youtube.png"> -->
+            <!-- <div class="sobre_nos_texto_video">
                 <div class="video_sobre">
                     <img class="video_sobre" src="/outros/youtube.png" alt="video sobre Zahav Representações">
                 </div>
-                        <!--<div class="video_sobre">
+                        <div class="video_sobre">
                             <img src="images/outros/youtube.png" alt="video sobre Zahav Representações">
+                            
                         </div> 
                         <p class="scroll_animado_up sobre_nos_p">
                             A Zahav Representações é um escritório especializado em vendas para a construção civil, 
@@ -75,8 +116,8 @@
                             impulsionando o sucesso de nossos clientes.
                             Frase1: Aumente suas vendas com as melhores construtoras.
                             Frase2: Conectamos sua indústria às maiores oportunidades.
-                        </p> -->
-                <div>
+                        </p> 
+                <div> -->
     </section>
 
     <section id="servicos">
@@ -84,7 +125,38 @@
     </section>
 
     <section id="contato">
-        <h1>Fale Conosco</h1>
+        <!-- Lado esquerdo (Informações ou imagem) -->
+        <div class="contato-esquerda">
+            <h2>Entre em contato e conecte-se com as melhores construtoras!</h2>
+        </div>
+
+        <!-- Lado direito (Formulário) -->
+        <div class="contato-direita">
+            <div class="form-container">
+                <h3>Fale Conosco</h3>
+                <form action="#" method="POST">
+                    <input type="text" name="empresa" placeholder="Nome da Empresa" required>
+                    <input type="text" name="responsavel" placeholder="Nome do Responsável" required>
+                    <input type="email" name="email" placeholder="E-mail Corporativo" required>
+                    <input type="tel" name="telefone" placeholder="Telefone (WhatsApp)">
+
+                    <!-- CAMPO SELECIONÁVEL PARA SEGMENTO DA EMPRESA -->
+                    <select name="segmento" required>
+                        <option value="" disabled selected>Selecione seu segmento</option>
+                        <option value="Blocos de Concreto">Blocos de Concreto</option>
+                        <option value="Tubos e Eletrodutos">Tubos e Eletrodutos</option>
+                        <option value="Aço e Estruturas Metálicas">Aço e Estruturas Metálicas</option>
+                        <option value="Materiais Elétricos">Materiais Elétricos</option>
+                        <option value="Materiais Elétricos">Materiais Logísticos</option>
+                        <option value="Hidráulica e Saneamento">Hidráulica e Saneamento</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+
+                    <textarea name="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <a href="https://wa.me/551142717950" target="_blank" id="whatsapp-btn">

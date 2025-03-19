@@ -120,8 +120,8 @@ nav ul li:not(:first-child) a:hover {
 section {
     height: 100vh; /* Cada seção ocupa a tela inteira */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     font-size: 2rem;
     color: white;
 }
@@ -198,6 +198,26 @@ section {
 
 .botao-saiba-mais:hover {
     background-color: #D9AF32; /* Cor de fundo ao passar o mouse */
+}
+
+.botao-entre-contato {
+    position: relative;
+    background-color: #797979; /* Cor de fundo */
+    border: none; /* Remove a borda */
+    color: white; /* Cor do texto */
+    padding: 15px 32px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Exibe como bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s ease; /* Adiciona transição */
+    border-radius: 8px; 
+    margin-top: 30px;
+}
+
+.botao-entre-contato:hover {
+    background-color: #444444; /* Cor de fundo ao passar o mouse */
 }
 
 .texture_geometry1{
@@ -277,7 +297,7 @@ section {
 /* Definindo cores diferentes para cada seção */
 /* #inicio { background: #BF8E34; }*/
 #servicos { background: #8B8B8C; }
-#contato { background: #4B4B4D; }
+#contato { background: #b6970c; }
 
 /* ############# RESPONSIVIDADE ############## */
 
