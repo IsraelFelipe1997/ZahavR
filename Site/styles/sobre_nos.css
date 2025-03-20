@@ -3,18 +3,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
-    align-items:left;
-    /*justify-content: start; coloca o conteudo no topo*/
+    flex-direction: column;
+    align-items: left;
     padding: 20px;
-    /*background-color: white;*/
-    background: rgba(217, 175, 50);
-    background-image: url("../images/sobre_nos/estrutura2.png");
+    background-image: linear-gradient(to bottom, #808080, #D9AF32), url("../images/sobre_nos/estrutura2.png");
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: left calc(100% - 100px); /* Ajuste o valor 100px conforme necessário */
     background-size: contain;
     background-blend-mode: multiply;
     opacity: 1;
+    background-attachment: fixed; /* Fixa a imagem em relação à janela */
+
 }
 
 /* adicionar fonte da pasta */
