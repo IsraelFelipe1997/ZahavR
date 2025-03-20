@@ -74,6 +74,11 @@
     line-height: 0.8; /* Altura da linha */
 }
 
+.p_sobre{
+    font-size: 18px; /* Ajuste conforme necessário */
+
+}
+
 .video_sobre{
     position: relative;
     padding-top: 10px;
@@ -118,11 +123,23 @@
     .video_sobre{
         width: 80%;
     }
+
+    #sobre { /* Substitua #sobre-nos pelo seletor correto da sua section */
+        height: auto; /* Altura automática para dispositivos móveis */
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 
 .container{
     position: relative;
+    padding: 10%;
+
+
 }
 
 
@@ -139,6 +156,7 @@
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .card {
@@ -151,6 +169,7 @@
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    
 }
 
 .card.show {
@@ -174,9 +193,3 @@
     color: #555;
 }
 
-@media (max-width: 768px) {
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-}

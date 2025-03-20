@@ -9,6 +9,7 @@
 .contato-esquerda {
     flex: 1;
     background-color: #fff;
+    background-image: url('images/contato/esquerda.png');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +25,7 @@
 /* LADO DIREITO (AMARELO) */
 .contato-direita {
     flex: 1;
-    background-color: #FFC107;
+    background: linear-gradient(to right, #D9AF32,#BF8E34);
     display: flex;
     align-items: center;
     justify-content: center;
