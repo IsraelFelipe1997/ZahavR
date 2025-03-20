@@ -132,24 +132,28 @@
         flex-direction: column;
         align-items: center;
     }
+
 }
 
-
-.container{
+.container_pai{
     position: relative;
     padding: 10%;
-
-
 }
 
+.container_textos {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px; /* Defina a largura máxima desejada */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+  }
 
-
-
-.section-title {
+/* .section-title {
     font-size: 32px;
-    color: #b8860b; /* Dourado */
+    color: #b8860b; 
     margin-bottom: 20px;
-}
+} */
 
 .cards {
     display: flex;
@@ -178,7 +182,7 @@
 }
 
 .card img {
-    width: 50px;
+    width: 100px;
     margin-bottom: 15px;
 }
 
