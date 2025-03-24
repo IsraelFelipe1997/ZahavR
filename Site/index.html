@@ -97,17 +97,20 @@
             document.addEventListener("DOMContentLoaded", function () {
                 const cards = document.querySelectorAll(".card");
                 const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("show");
-                        }
-                    });
-                }, { threshold: 0.3 });
-        
-                cards.forEach(card => {
-                    observer.observe(card);
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    } else {
+                        // Adicionado: Remove a classe 'show' se o elemento não estiver mais intersectando
+                        entry.target.classList.remove("show");
+                    }
                 });
+            }, { threshold: 0.3 }); // Ajuste o threshold conforme necessário
+
+            cards.forEach(card => {
+                observer.observe(card);
             });
+        });
         </script>
 
         <!-- <h1 class="sobre_nos_titulo">SOBRE NÓS</h1>
@@ -135,7 +138,27 @@
     </section>
 
     <section id="servicos">
-        <h1>Serviços</h1>
+        <div class="cards-container-servicos">
+            <div class="card-servico">
+                <h1>Nossos Serviços</h1>
+                <h3>Potencialização de Vendas</h3>
+                <p>Aumente suas vendas com estratégias personalizadas e uma 
+                   rede de contatos exclusiva no setor da construção civil.</p>
+            </div>
+            <div class="card-servico">
+                <h3>Marketing Estratégico</h3>
+                <p>Desenvolvemos campanhas de marketing eficazes 
+                   para destacar seus produtos e serviços no mercado.</p>
+            </div>
+            <div class="card-servico">
+                <h3>Rede de Parceiros Estratégicos</h3>
+                <p>Aproveite nossa vasta rede de parceiros estratégicos
+                   para expandir seus negócios e alcançar novos mercados.</p>
+            </div>
+        </div>
+        <img class="video_sobre_servicos" 
+             src="images/outros/youtube.png" 
+             style="max-width: 100%; height: auto;">
     </section>
 
     <section id="contato">
@@ -180,8 +203,9 @@
     <footer class="footer">
         <p>© 2025 Zahav Representações.  Todos os direitos reservados.</p>
     </footer>
-    
+
     <script src="scripts/one_page_scroll_script.js"></script>
+    <script src="scripts/menu_scroll_change_color.js"></script>
     <script src="scripts/slide_capa.js"></script>
     <script src="scripts/video_hero.js"></script>
     <script src="scripts/menu_reponsivo.js"></script>

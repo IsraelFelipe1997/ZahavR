@@ -47,25 +47,20 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(0, 0, 0);
+    color: #333; /* Cinza padrão */
     text-decoration: none;
     font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
 
-/* Cor do item "Início" */
-nav ul li:first-child a {
+/* Cor do item ativo */
+nav ul li a.active {
     color: #DAA520; /* Amarelo */
 }
 
-/* Cor padrão dos outros itens */
-nav ul li:not(:first-child) a {
-    color: #333; /* Cinza */
-}
-
 /* Hover: troca o cinza para amarelo */
-nav ul li:not(:first-child) a:hover {
+nav ul li a:hover {
     color: #DAA520;
 }
 
@@ -93,7 +88,6 @@ nav ul li:not(:first-child) a:hover {
         margin: 0 15px;
     }
 }
-
 
 /* Estilizando a barra de rolagem no Chrome, Edge e Safari */
 ::-webkit-scrollbar {
@@ -264,6 +258,13 @@ section {
     width: 60px; /* Ajuste o tamanho conforme necessário */
     height: 60px;
     z-index: 1000; /* Garante que fique sempre visível */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 #whatsapp-btn img {
@@ -296,8 +297,8 @@ section {
 
 /* Definindo cores diferentes para cada seção */
 /* #inicio { background: #BF8E34; }*/
-#servicos { background: #8B8B8C; }
-#contato { background: #b6970c; }
+/* #servicos { background: #8B8B8C; } */
+/* #contato { background: #b6970c; } */
 
 /* ############# RESPONSIVIDADE ############## */
 

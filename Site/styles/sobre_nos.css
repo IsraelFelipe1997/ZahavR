@@ -32,7 +32,6 @@
 }
 
 /*  ###### estilo para estruturar a pagina em containers de linhas e colunas ####### */
-
 .container {
     position: absolute;
     top: 0;
@@ -50,8 +49,8 @@
     padding: 10px;
     box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
-/*  ###### ################################################################ ####### */
 
+/*  ###### ############################################################# ####### */
 .scroll_animado_up {
     opacity: 0;
     transform: translateY(50px);
@@ -76,13 +75,6 @@
 .p_sobre{
     font-size: 18px; /* Ajuste conforme necessário */
 
-}
-
-.video_sobre{
-    position: relative;
-    padding-top: 10px;
-    margin-top: 10px;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .subtitulo{
