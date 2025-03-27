@@ -3,9 +3,17 @@ document.querySelectorAll('nav a').forEach(link => {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
+        const headerHeight = document.querySelector('header').offsetHeight;
+
+        let offsetTop = targetSection.offsetTop;
+
+        // Verifica se a tela é menor que 768 pixels (dispositivo móvel)
+        if (window.innerWidth < 768) {
+            offsetTop -= headerHeight; // Aplica a correção apenas em dispositivos móveis considerando altura do header
+        }
 
         window.scrollTo({
-            top: targetSection.offsetTop,
+            top: offsetTop,
             behavior: 'smooth'
         });
     });

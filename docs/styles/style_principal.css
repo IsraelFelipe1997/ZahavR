@@ -64,7 +64,7 @@ nav ul li a:hover {
     color: #DAA520;
 }
 
-/* Para telas grandes (Desktop e Tablets) */
+/* ocultar menu mobile para telas grandes*/
 @media (min-width: 768px) {
     #menu-btn, #close-btn {
         display: none; /* Esconde os botões do menu mobile */
@@ -337,6 +337,7 @@ section {
         background: rgba(255, 255, 255, 0.9);
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
         padding-top: 30px;
+        
     }
 
     nav ul {
@@ -396,3 +397,4 @@ section {
         display: none;
     }
 }
+
