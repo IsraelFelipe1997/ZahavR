@@ -214,7 +214,7 @@ section {
     background-color: #444444; /* Cor de fundo ao passar o mouse */
 }
 
-.texture_geometry1{
+.texture_geometry1 {
     position: absolute;
     bottom: 50px; /* Ajuste conforme necessário */
     left: 30px; /* Ajuste conforme necessário */
@@ -222,11 +222,16 @@ section {
     opacity: 0.5;
 }
 
-.texture_geometry2{
+.texture_geometry2 {
     position: absolute;
     top: 150px; /* Ajuste conforme necessário */
     right: 30px; /* Ajuste conforme necessário */
     opacity: 0.5;
+}
+
+/* Esconde a versão mobile por padrão */
+.img-mobile {
+    display: none;
 }
 
 .indicadores {
@@ -321,10 +326,7 @@ section {
     .slogan-video {
         width: 90vw; /* Quase a largura total da tela */
     }
-}
 
-/* Para Smartphones */
-@media (max-width: 767px) {
     nav {
         display: none; /* Esconde o menu padrão */
         position: fixed;
@@ -387,5 +389,10 @@ section {
 
     #close-btn:hover {
         transform: rotate(90deg) scale(1.2);
+    }
+
+    .texture_geometry1,
+    .texture_geometry2 {
+        display: none;
     }
 }
