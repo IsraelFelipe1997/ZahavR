@@ -57,10 +57,42 @@
         <div class="texture_geometry2"> <img src="images/texturas/pattern1.png"></div>
     </section>
 
+    <Script>// Função para adicionar/remover a classe "visible" ao rolar
+        function checkScroll() {
+            const titulo = document.querySelector('.sobre_nos_titulo');
+            const paragrafo = document.querySelector('.p_sobre');
+        
+            const tituloPos = titulo.getBoundingClientRect().top;
+            const paragrafoPos = paragrafo.getBoundingClientRect().top;
+        
+            // Adiciona a classe "visible" quando os elementos entram na área visível da tela
+            if (tituloPos < window.innerHeight * 0.8 && titulo.classList.contains('visible') === false) {
+                titulo.classList.add('visible');
+            }
+        
+            if (paragrafoPos < window.innerHeight * 0.8 && paragrafo.classList.contains('visible') === false) {
+                paragrafo.classList.add('visible');
+            }
+        
+            // Remove a classe "visible" quando os elementos saem da área visível da tela
+            if (tituloPos > window.innerHeight && titulo.classList.contains('visible') === true) {
+                titulo.classList.remove('visible');
+            }
+        
+            if (paragrafoPos > window.innerHeight && paragrafo.classList.contains('visible') === true) {
+                paragrafo.classList.remove('visible');
+            }
+        }
+        
+        // Chama a função no carregamento da página e quando o scroll ocorrer
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+    </Script>
+
     <section id="sobre">
         <div class="container_pai">
             <div class="container_textos">
-            <h1> Sobre Nós</h1>
+            <h1 class="sobre_nos_titulo"> Sobre Nós</h1>
             <!-- <h2 class="section-title">MISSÃO, VISÃO E VALORES.</h2> -->
             <p class="p_sobre"> A Zahav Representações nasceu da paixão em conectar negócios e impulsionar 
                 o crescimento no setor da construção civil. Fundada em 2014, 
@@ -74,43 +106,46 @@
                     <img src="images/icons/missao.png" alt="Missão">
                     <h3>Missão</h3>
                     <p>Impulsionar as vendas do setor industrial por meio de estratégias
-                        de marketing integradas com vendas, conectando fabricantes aos melhores 
-                        compradores e ampliando oportunidades de negócios.
+                       de marketing integradas com vendas, conectando fabricantes aos melhores 
+                       compradores e ampliando oportunidades de negócios.
                     </p>
                 </div>
                 <div class="card">
                     <img src="images/icons/visao.png" alt="Visão">
                     <h3>Visão</h3>
                     <p>Ser referência em representação comercial na construção civil, 
-                        reconhecida pela transparência e excelência.
+                       reconhecida pela transparência e excelência.
                     </p>
                 </div>
                 <div class="card">
                     <img src="images/icons/valores.png" alt="Valores">
                     <h3>Valores</h3>
-                    <p>Conexão estratégica, inovação, honestidade, transparência, crescimento sustentável e excelência no atendimento.</p>
+                    <p>Conexão estratégica, inovação, honestidade, transparência, 
+                       crescimento sustentável e excelência no atendimento.</p>
                 </div>
             </div>
         </div>
 
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const cards = document.querySelectorAll(".card");
-                const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                    } else {
-                        // Adicionado: Remove a classe 'show' se o elemento não estiver mais intersectando
-                        entry.target.classList.remove("show");
-                    }
-                });
-            }, { threshold: 0.3 }); // Ajuste o threshold conforme necessário
+                document.addEventListener("DOMContentLoaded", function () {
+                    const cards = document.querySelectorAll(".card");
+                    const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                        } else {
+                            // Adicionado: Remove a classe 'show' se o elemento não estiver mais intersectando
+                            entry.target.classList.remove("show");
+                        }
+                    });
+                }, { threshold: 0.3 }); // Ajuste o threshold conforme necessário
 
-            cards.forEach(card => {
-                observer.observe(card);
-            });
-        });
+                cards.forEach(card => {
+                    observer.observe(card);
+                    });
+                });
+
+                
         </script>
 
         <!-- <h1 class="sobre_nos_titulo">SOBRE NÓS</h1>
@@ -137,28 +172,62 @@
                 <div> -->
     </section>
 
+    <script>
+        //movimento do titulo servico
+        document.addEventListener("DOMContentLoaded", function() {
+            const titulo = document.getElementById("titulo_servico");
+            function checkScroll() {
+                const rect = titulo.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    titulo.style.opacity = 1;
+                    titulo.style.transform = "translateX(0)";
+                } else {
+                    titulo.style.opacity = 0;
+                    titulo.style.transform = "translateX(100%)";
+                }
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        });
+
+        //movimento dos cards
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".card-servico");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible"); // Aparece ao entrar
+                    } else {
+                        entry.target.classList.remove("visible"); // Some ao sair
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => observer.observe(card));
+        });
+
+    </script>
+
     <section id="servicos">
-        <div class="cards-container-servicos">
+        <h1 id="titulo_servico">Serviços</h1>
+        <div class="container_servicos">
             <div class="card-servico">
-                <h1>Nossos Serviços</h1>
                 <h3>Potencialização de Vendas</h3>
-                <p>Aumente suas vendas com estratégias personalizadas e uma 
-                   rede de contatos exclusiva no setor da construção civil.</p>
+                <p>Aumente suas vendas com estratégias personalizadas e uma rede de contatos exclusiva no setor da construção civil.</p>
             </div>
             <div class="card-servico">
                 <h3>Marketing Estratégico</h3>
-                <p>Desenvolvemos campanhas de marketing eficazes 
-                   para destacar seus produtos e serviços no mercado.</p>
+                <p>Desenvolvemos campanhas de marketing eficazes para destacar seus produtos e serviços no mercado.</p>
             </div>
             <div class="card-servico">
                 <h3>Rede de Parceiros Estratégicos</h3>
-                <p>Aproveite nossa vasta rede de parceiros estratégicos
-                   para expandir seus negócios e alcançar novos mercados.</p>
+                <p>Aproveite nossa vasta rede de parceiros estratégicos para expandir seus negócios e alcançar novos mercados.</p>
             </div>
         </div>
         <img class="video_sobre_servicos" 
              src="images/outros/youtube.png" 
-             style="max-width: 100%; height: auto;">
+             style="max-width: 98%; height: auto;">
     </section>
 
     <section id="contato">

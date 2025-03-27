@@ -2,25 +2,110 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    justify-content: center;
-    align-items: center; 
     background-color: #4B4B4D;
-}
-
-.container_servicos{
     position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+    overflow: hidden;
+    background-image:  url("../images/servicos/vendas2.png");
 }
 
-.video_sobre_servicos{
+#servicos h1 {
+    font-size: 100px; /* Ajuste conforme necessário */
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-align: center; /* Alinhamento padrão para desktop/tablet */
+    line-height: 0.8; /* Altura da linha */
+    padding-bottom: 40px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out, opacity 1s ease-out;
+}
+
+.container_servicos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-servico {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.card-servico.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-servico:hover {
+    transform: translateY(-5px);
+}
+
+.card-servico h3 {
+    margin-bottom: 20px;
+    color: #ceb00a;
+    font-size: 18px;
+}
+
+.card-servico p {
+    color: #252525;
+    font-size: 14px;
+}
+
+.video_sobre_servicos {
     display: flex;
     justify-content: center;
     padding-top: 10px;
     margin-top: 10px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
-
 }
 
+.parceiros {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    background: #333;
+    padding: 10px 0;
+}
+
+.parceiros-slide {
+    display: flex;
+    white-space: nowrap;
+    animation: slide 10s linear infinite;
+}
+
+.parceiros-slide img {
+    height: 50px;
+    margin: 0 20px;
+}
+
+@keyframes slide {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+@media (max-width: 768px) {
+    .container_servicos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #servicos h1 {
+        position: relative;
+        text-align: center; /* Centraliza o texto */
+        font-size: 8vw; /* Ajuste conforme necessário */
+        width: 80%; /* Define a largura do texto */
+        margin: 0 auto; /* Centraliza o texto horizontalmente */
+    }
+}

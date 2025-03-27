@@ -13,7 +13,6 @@
     background-blend-mode: multiply;
     opacity: 1;
     background-attachment: fixed; /* Fixa a imagem em relação à janela */
-
 }
 
 /* adicionar fonte da pasta */
@@ -63,19 +62,44 @@
     transform: translateY(0);
 }
 
+/* Para evitar a barra de rolagem lateral */
+html, body {
+    overflow-x: hidden; /* Impede a rolagem lateral */
+}
+
+/* Estilo do título */
 .sobre_nos_titulo {
-    position: relative;
-    font-size: 130px; /* Ajuste conforme necessário */
+    font-size: 100px; /* Ajuste conforme necessário */
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    text-align: left; /* Alinhamento padrão para desktop/tablet */
+    text-align: center; /* Alinhamento padrão para desktop/tablet */
     line-height: 0.8; /* Altura da linha */
+    padding-bottom: 10px;
+    opacity: 0;
+    transform: translateX(-100vw); /* Inicialmente fora da tela à esquerda */
+    transition: all 0.5s ease-out;
 }
 
-.p_sobre{
+/* Estilo do parágrafo */
+.p_sobre {
     font-size: 18px; /* Ajuste conforme necessário */
-
+    opacity: 0;
+    transform: translateX(100vw); /* Inicialmente fora da tela à direita */
+    transition: all 0.5s ease-out;
+    font-weight: bold;
 }
+
+/* Animação de scroll para a entrada dos elementos */
+.sobre_nos_titulo.visible {
+    opacity: 1;
+    transform: translateX(0); /* Quando visível, entra na posição original */
+}
+
+.p_sobre.visible {
+    opacity: 1;
+    transform: translateX(0); /* Quando visível, entra na posição original */
+}
+
 
 .subtitulo{
     position: relative;
@@ -123,7 +147,6 @@
         flex-direction: column;
         align-items: center;
     }
-
 }
 
 .container_pai{
@@ -164,12 +187,17 @@
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-    
 }
 
 .card.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05); /* Eleva o card e aumenta levemente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o hover */
 }
 
 .card img {
@@ -187,4 +215,3 @@
     font-size: 16px;
     color: #555;
 }
-
