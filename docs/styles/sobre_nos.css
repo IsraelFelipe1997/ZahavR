@@ -12,7 +12,7 @@
     background-size: contain;
     background-blend-mode: multiply;
     opacity: 1;
-    background-attachment: fixed; /* Fixa a imagem em relação à janela */
+    /*background-attachment: fixed;  Paralax Fixa a imagem em relação à janela */
 }
 
 /* adicionar fonte da pasta */
