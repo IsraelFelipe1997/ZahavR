@@ -237,7 +237,7 @@
                     <input type="text" name="empresa" placeholder="Nome da Empresa" required>
                     <input type="text" name="responsavel" placeholder="Nome do Responsável" required>
                     <input type="email" name="email" placeholder="E-mail Corporativo" required>
-                    <input type="tel" name="telefone" placeholder="Telefone (WhatsApp)">
+                    <input type="tel" name="telefone" placeholder="Telefone (WhatsApp)" oninput="this.value = this.value.replace(/[^0-9+()-]/g, '');" maxlength="15" />
 
                     <!-- CAMPO SELECIONÁVEL PARA SEGMENTO DA EMPRESA -->
                     <select name="segmento" required>
