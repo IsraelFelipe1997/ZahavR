@@ -22,7 +22,19 @@ document.querySelectorAll('nav a').forEach(link => {
 // scroll do botao saiba mais
 document.getElementById('botao_sobre').addEventListener('click', function(e) {
     e.preventDefault(); // Impede o comportamento padrão do link
-  
+
     const sobreSection = document.getElementById('sobre');
-    sobreSection.scrollIntoView({ behavior: 'smooth' }); // Rola suavemente
-  });
+    const headerHeight = document.querySelector('header').offsetHeight; // Obtém a altura do header
+
+    let offsetTop = sobreSection.offsetTop;
+
+    // Verifica se a tela é menor que 768 pixels (dispositivo móvel)
+    if (window.innerWidth < 768) {
+        offsetTop -= headerHeight; // Aplica a correção apenas em dispositivos móveis
+    }
+
+    window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+    });
+});
